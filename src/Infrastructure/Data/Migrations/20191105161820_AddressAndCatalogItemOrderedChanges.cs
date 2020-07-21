@@ -12,7 +12,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 maxLength: 18,
                 nullable: true,
                 oldClrType: typeof(string),
-                oldType: "nvarchar(max)",
+                oldType: "varchar",
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
@@ -21,7 +21,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 maxLength: 180,
                 nullable: true,
                 oldClrType: typeof(string),
-                oldType: "nvarchar(max)",
+                oldType: "varchar",
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
@@ -30,7 +30,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 maxLength: 60,
                 nullable: true,
                 oldClrType: typeof(string),
-                oldType: "nvarchar(max)",
+                oldType: "varchar",
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
@@ -39,7 +39,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 maxLength: 90,
                 nullable: true,
                 oldClrType: typeof(string),
-                oldType: "nvarchar(max)",
+                oldType: "varchar",
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
@@ -48,7 +48,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 maxLength: 100,
                 nullable: true,
                 oldClrType: typeof(string),
-                oldType: "nvarchar(max)",
+                oldType: "varchar",
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
@@ -57,7 +57,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 maxLength: 50,
                 nullable: true,
                 oldClrType: typeof(string),
-                oldType: "nvarchar(max)",
+                oldType: "varchar",
                 oldNullable: true);
         }
 
@@ -66,7 +66,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "ShipToAddress_ZipCode",
                 table: "Orders",
-                type: "nvarchar(max)",
+                type: "varchar",
                 nullable: true,
                 oldClrType: typeof(string),
                 oldMaxLength: 18,
@@ -75,7 +75,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "ShipToAddress_Street",
                 table: "Orders",
-                type: "nvarchar(max)",
+                type: "varchar",
                 nullable: true,
                 oldClrType: typeof(string),
                 oldMaxLength: 180,
@@ -84,7 +84,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "ShipToAddress_State",
                 table: "Orders",
-                type: "nvarchar(max)",
+                type: "varchar",
                 nullable: true,
                 oldClrType: typeof(string),
                 oldMaxLength: 60,
@@ -93,7 +93,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "ShipToAddress_Country",
                 table: "Orders",
-                type: "nvarchar(max)",
+                type: "varchar",
                 nullable: true,
                 oldClrType: typeof(string),
                 oldMaxLength: 90,
@@ -102,7 +102,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "ShipToAddress_City",
                 table: "Orders",
-                type: "nvarchar(max)",
+                type: "varchar",
                 nullable: true,
                 oldClrType: typeof(string),
                 oldMaxLength: 100,
@@ -111,7 +111,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "ItemOrdered_ProductName",
                 table: "OrderItems",
-                type: "nvarchar(max)",
+                type: "varchar",
                 nullable: true,
                 oldClrType: typeof(string),
                 oldMaxLength: 50,

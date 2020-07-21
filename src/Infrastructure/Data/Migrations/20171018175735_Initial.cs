@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using System;
 
 namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
@@ -25,8 +26,8 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BuyerId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    BuyerId = table.Column<string>(type: "varchar", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -38,7 +39,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false),
-                    Brand = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Brand = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,7 +51,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Type = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -62,14 +63,14 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BuyerId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OrderDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
-                    ShipToAddress_City = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ShipToAddress_Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ShipToAddress_State = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ShipToAddress_Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ShipToAddress_ZipCode = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    BuyerId = table.Column<string>(type: "varchar", nullable: true),
+                    OrderDate = table.Column<DateTimeOffset>(type: "timestamptz", nullable: false),
+                    ShipToAddress_City = table.Column<string>(type: "varchar", nullable: true),
+                    ShipToAddress_Country = table.Column<string>(type: "varchar", nullable: true),
+                    ShipToAddress_State = table.Column<string>(type: "varchar", nullable: true),
+                    ShipToAddress_Street = table.Column<string>(type: "varchar", nullable: true),
+                    ShipToAddress_ZipCode = table.Column<string>(type: "varchar", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -81,7 +82,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     BasketId = table.Column<int>(type: "int", nullable: true),
                     CatalogItemId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
@@ -105,9 +106,9 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false),
                     CatalogBrandId = table.Column<int>(type: "int", nullable: false),
                     CatalogTypeId = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    PictureUri = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "varchar", nullable: true),
+                    Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    PictureUri = table.Column<string>(type: "varchar", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18, 2)", nullable: false)
                 },
                 constraints: table =>
@@ -132,13 +133,13 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     OrderId = table.Column<int>(type: "int", nullable: true),
                     UnitPrice = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
                     Units = table.Column<int>(type: "int", nullable: false),
                     ItemOrdered_CatalogItemId = table.Column<int>(type: "int", nullable: false),
-                    ItemOrdered_PictureUri = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ItemOrdered_ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ItemOrdered_PictureUri = table.Column<string>(type: "varchar", nullable: true),
+                    ItemOrdered_ProductName = table.Column<string>(type: "varchar", nullable: true)
                 },
                 constraints: table =>
                 {
